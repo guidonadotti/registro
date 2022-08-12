@@ -6,11 +6,12 @@ document.getElementById("regBtn").addEventListener("click",function(){
     let password2=document.getElementById("password2")
     let terminos=document.getElementById("terminos")
     let boton=document.getElementById("regBtn")
-    for(elemento of document.getElementsByClassName("form-control")){
-        elemento.setAttribute("required","")
-    }
-    if(nombre.value!=null){
+
+    if(nombre.value!=null && apellido.value!=null && email.value!=null && terminos.checked==true && 
+        (password1.value===password2.value) && password1.value.length>=6){
         showAlertSuccess()
+    }else{
+        showAlertError()
     }
 })
 
@@ -21,3 +22,5 @@ function showAlertSuccess() {
 function showAlertError() {
     document.getElementById("alert-danger").classList.add("show");
 }
+
+/* Andrés Martínez, Guido Nadotti, María Pía Camesella, Agustin Gonzatto, Florencia Fernandez, Lihuén Villarreal */
